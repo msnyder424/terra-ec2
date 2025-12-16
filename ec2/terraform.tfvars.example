@@ -1,0 +1,35 @@
+# Sample terraform.tfvars file
+# Copy this file and customize with your values
+
+# Required variables
+hostname = "dev-workstation"
+aws_account_id = "123456789012"  # Replace with your target AWS account ID
+ssh_private_key_path = "~/.ssh/id_rsa"
+ssh_public_key_path = "~/.ssh/id_rsa.pub"
+
+# Optional variables (uncomment and modify as needed)
+# aws_region = "us-east-1"
+# instance_type = "t2.xlarge"
+# git_ssh_private_key_path = "~/.ssh/git_rsa"  # Optional: for git repository access. UNCOMMENT TO USE!
+
+# Storage configuration
+# ebs_volume_size = 64                    # Size in GB (default: 64, range: 8-16384)
+# preserve_ebs_on_termination = false    # Set to true to keep data after termination (WARNING: costs continue)
+
+# Authentication options (choose one):
+
+# Option A: Use environment variables (leave aws_profile empty)
+aws_profile = ""
+
+# Option B: Use AWS SSO profile (uncomment and specify your SSO profile name)
+# aws_profile = "my-sso-profile"
+
+# Note: assume_role_arn is not needed for these simple authentication methods
+assume_role_arn = ""
+
+# Optional: Additional tags for all resources (uncomment and customize as needed)
+# tags = {
+#   Environment = "development"
+#   Team        = "bioinformatics"
+#   Owner       = "your-name"
+# }
