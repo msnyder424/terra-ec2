@@ -1,6 +1,6 @@
-# BX-Ops-EC2-Terra: Bioinformatics Development EC2 Terraform Script
+# Terra-EC2: Development EC2 Terraform Script
 
-This Terraform script automates the deployment of a fully configured Ubuntu EC2 instance for bioinformatics development work. The instance comes pre-installed with essential development tools including Docker, Conda (via Micromamba), Git, Node.js, PHP, Java, MongoDB, and more.
+This Terraform script automates the deployment of a fully configured Ubuntu EC2 instance for development work. The instance comes pre-installed with essential development tools including Docker, Conda (via Micromamba), Git, Node.js, PHP, Java, MongoDB, and more.
 
 ## High-Level Description
 
@@ -11,7 +11,7 @@ This script creates:
 - Automatic installation of development dependencies via user data script
 - SSH key pair configuration for secure access
 
-The instance is configured with all necessary tools for bioinformatics development.
+The instance is configured with all necessary tools for development.
 
 ## Prerequisites
 
@@ -43,7 +43,7 @@ The instance is configured with all necessary tools for bioinformatics developme
 | `git_ssh_private_key_path` | Path to git SSH private key (optional) | `""` | `"~/.ssh/git_rsa"` |
 | `ebs_volume_size` | Size of EBS root volume in GB | `64` | `128` |
 | `preserve_ebs_on_termination` | Keep EBS volume after instance termination | `false` | `true` |
-| `tags` | Additional tags for all resources | `{"CreatedBy": "Terraform", "Purpose": "Development"}` | `{"Environment": "dev", "Team": "bioinfo"}` |
+| `tags` | Additional tags for all resources | `{"CreatedBy": "Terraform", "Purpose": "Development"}` | `{"Environment": "dev", "Team": "engineering"}` |
 
 ## AWS Authentication
 
@@ -195,7 +195,7 @@ terraform apply -var-file=terraform.tfvars
 ### Advanced Deployment with Git Keys
 ```bash
 # Advanced terraform.tfvars
-echo 'hostname = "bioinfo-dev"
+echo 'hostname = "dev"
 ssh_private_key_path = "~/.ssh/id_rsa"
 ssh_public_key_path = "~/.ssh/id_rsa.pub"
 instance_type = "m5.xlarge"

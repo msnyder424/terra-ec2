@@ -30,6 +30,6 @@ assume_role_arn = ""
 # Optional: Additional tags for all resources (uncomment and customize as needed)
 # tags = {
 #   Environment = "development"
-#   Team        = "bioinformatics"
+#   Team        = "engineering"
 #   Owner       = "your-name"
 # }
